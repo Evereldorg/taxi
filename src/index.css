@@ -1,0 +1,133 @@
+@import "tailwindcss";
+/* Подключаем базовые стили, компоненты и утилиты Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Устанавливаем градиент для фона */
+.bg-primary {
+  background: linear-gradient(to bottom, #FFDC00, #FFAA00); /* красивый жёлто-оранжевый градиент */
+}
+
+/* Добавляем анимацию для плавного появления */
+@layer utilities {
+  .fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Позиционирование модального окна поверх контента */
+.overlay-class {
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 9999; /* Обеспечиваем, что модальное окно поверх всего */
+}
+
+/* Стили для модального окна */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);  /* Чёрный полупрозрачный фон */
+  backdrop-filter: blur(1px);  /* Применение блюра */
+  z-index: 999;  /* Убедись, что блок находится поверх других элементов */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button {
+  background-color: #ffbb33;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.fleet-section {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.fleet-carousel {
+  display: flex;
+  animation: move-cars 20s linear infinite;
+}
+
+@keyframes move-cars {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.car-image {
+  transition: transform 0.2s ease;
+}
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.flip-card-front {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.flip-card-back {
+  background-color: #fbbf24; /* желтый */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: rotateY(180deg);
+}
