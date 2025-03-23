@@ -13,15 +13,15 @@ const Navbar = () => {
 
         {/* Навигация */}
         <div className="hidden md:flex space-x-6">
-          {["about", "fleet", "services", "contact"].map((section) => (
+          {["fleet", "about", "services", "contact"].map((section) => (
             <Link
               key={section}
               to={section} // Используем to вместо href
               spy={true}  // Следит за активной секцией
               smooth={true}  // Плавная прокрутка
-              offset={-20}  // Поднимаем немного, чтобы не скрывались элементы под Navbar
-              duration={500}  // Длительность прокрутки
-              className="text-gray-700 hover:text-yellow-500 transition-all duration-1 ease-in-out"
+              offset={-30}  // Поднимаем немного, чтобы не скрывались элементы под Navbar
+              duration={200}  // Уменьшаем длительность прокрутки для мгновенного перехода
+              className="text-2x text-gray-900 hover:text-yellow-500 transition-all duration-1 ease-in-out"
             >
               {section === "about" ? "О нас" :
                section === "fleet" ? "Услуги" : 

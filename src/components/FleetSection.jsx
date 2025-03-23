@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import Modal from "./Modal";
-
+import { LiaCarSideSolid, LiaShipSolid, LiaHelicopterSolid, LiaGlassCheersSolid, LiaGlobeSolid } from "react-icons/lia";
 
 const FleetSection = () => {
   return (
@@ -26,12 +24,16 @@ const FleetSection = () => {
         <div className="flip-card relative group w-full max-w-[320px] h-[450px] mx-auto transform hover:scale-105 transition-all duration-300">
           <div className="flip-card-inner w-full h-full bg-white rounded-lg shadow-lg transition-transform duration-300">
             {/* Лицевая сторона карточки */}
-            <div className="flip-card-front w-full h-full p-8 flex flex-col justify-center items-center text-center bg-gradient-to-r from-white-400 to-white-600 rounded-lg shadow-xl">
-              <h3 className="text-xl font-semibold">🚖 VIP-трансферы</h3>
+            <div className="flip-card-front w-full h-full p-8 flex flex-col justify-center items-center text-center bg-gradient-to-r from-gray-100 to-gray-100 rounded-lg shadow-xl">
+              <h3 className="text-2xl font-semibold">VIP-трансферы</h3>
+              {/* Иконка внутри карточки */}
+              <div className="flex justify-center mt-4">
+                <LiaCarSideSolid size={100} color="#FBBF24" />
+              </div>
             </div>
             {/* Оборотная сторона карточки */}
             <div className="flip-card-back w-full h-full p-8 bg-yellow-500 text-white rounded-lg flex items-center justify-center transform rotate-y-180">
-              <p className="text-xl text-center leading-relaxed">
+              <p className="text-xl text-white leading-relaxed font-semibold text-justify">
                 Организуем встречу в аэропорту, на вокзале или даже на границе с максимальным комфортом. Ваш личный водитель встретит вас с табличкой, поможет с багажом и доставит в нужное место без задержек.
               </p>
             </div>
@@ -42,12 +44,16 @@ const FleetSection = () => {
         <div className="flip-card relative group w-full max-w-[320px] h-[450px] mx-auto transform hover:scale-105 transition-all duration-300">
           <div className="flip-card-inner w-full h-full bg-white rounded-lg shadow-lg transition-transform duration-300">
             {/* Лицевая сторона карточки */}
-            <div className="flip-card-front w-full h-full p-8 flex flex-col justify-center items-center text-center bg-gradient-to-r from-white-400 to-white-600 rounded-lg shadow-xl">
-              <h3 className="text-xl font-semibold text-black">⛵️ Эксклюзивные экскурсионные туры по рекам и каналам Санкт-Петербурга</h3>
+            <div className="flip-card-front w-full h-full p-8 flex flex-col justify-center items-center text-center bg-gradient-to-r from-gray-100 to-gray-100 rounded-lg shadow-xl">
+              <h3 className="text-2xl font-semibold text-black">Эксклюзивные экскурсионные туры</h3>
+              {/* Иконка внутри карточки */}
+              <div className="flex justify-center mt-4">
+                <LiaShipSolid size={100} color="#FBBF24" />
+              </div>
             </div>
             {/* Оборотная сторона карточки */}
             <div className="flip-card-back w-full h-full p-8 bg-yellow-500 text-white rounded-lg flex items-center justify-center transform rotate-y-180">
-              <p className="text-xl text-center leading-relaxed">
+              <p className="text-xl text-center leading-relaxed shadow-xl bg-black bg-opacity-60 p-4 rounded-xl">
                 Роскошные прогулки на катерах по знаменитым водным артериям города, где каждый маршрут создан с учетом ваших пожеланий.
               </p>
             </div>
@@ -58,8 +64,12 @@ const FleetSection = () => {
         <div className="flip-card relative group w-full max-w-[320px] h-[450px] mx-auto transform hover:scale-105 transition-all duration-300">
           <div className="flip-card-inner w-full h-full bg-white rounded-lg shadow-lg transition-transform duration-300">
             {/* Лицевая сторона карточки */}
-            <div className="flip-card-front w-full h-full p-8 flex flex-col justify-center items-center text-center bg-gradient-to-r from-white-400 to-white-600 rounded-lg shadow-xl">
-              <h3 className="text-xl font-semibold text-black">🚁 Полеты на вертолете над Санкт-Петербургом</h3>
+            <div className="flip-card-front w-full h-full p-8 flex flex-col justify-center items-center text-center bg-gradient-to-r from-gray-100 to-gray-100 rounded-lg shadow-xl">
+              <h3 className="text-2xl font-semibold text-black">Полеты на вертолете</h3>
+              {/* Иконка внутри карточки */}
+              <div className="flex justify-center mt-4">
+                <LiaHelicopterSolid size={100} color="#FBBF24" />
+              </div>
             </div>
             {/* Оборотная сторона карточки */}
             <div className="flip-card-back w-full h-full p-8 bg-yellow-500 text-white rounded-lg flex items-center justify-center transform rotate-y-180">
@@ -74,12 +84,16 @@ const FleetSection = () => {
         <div className="flip-card relative group w-full max-w-[320px] h-[450px] mx-auto transform hover:scale-105 transition-all duration-300">
           <div className="flip-card-inner w-full h-full bg-white rounded-lg shadow-lg transition-transform duration-300">
             {/* Лицевая сторона карточки */}
-            <div className="flip-card-front w-full h-full p-8 flex flex-col justify-center items-center text-center bg-gradient-to-r from-white-400 to-white-600 rounded-lg shadow-xl">
-              <h3 className="text-xl font-semibold text-black">🎉 Выездные мероприятия, свадебный кортеж, автомобили для торжеств</h3>
+            <div className="flip-card-front w-full h-full p-8 flex flex-col justify-center items-center text-center bg-gradient-to-r from-gray-100 to-gray-100 rounded-lg shadow-xl">
+              <h3 className="text-2xl font-semibold text-black">Выездные мероприятия</h3>
+              {/* Иконка внутри карточки */}
+              <div className="flex justify-center mt-4">
+                <LiaGlassCheersSolid size={100} color="#FBBF24" />
+              </div>
             </div>
             {/* Оборотная сторона карточки */}
             <div className="flip-card-back w-full h-full p-8 bg-yellow-500 text-white rounded-lg flex items-center justify-center transform rotate-y-180">
-              <p className="text-xl text-center leading-relaxed">
+              <p className="text-xl text-center leading-relaxed shadow-xl bg-black bg-opacity-60 p-4 rounded-xl">
                 Сделаем любое событие незабываемым, предоставляя элегантные автомобили, водителей в форме и безупречный сервис.
               </p>
             </div>
@@ -90,12 +104,16 @@ const FleetSection = () => {
         <div className="flip-card relative group w-full max-w-[320px] h-[450px] mx-auto transform hover:scale-105 transition-all duration-300">
           <div className="flip-card-inner w-full h-full bg-white rounded-lg shadow-lg transition-transform duration-300">
             {/* Лицевая сторона карточки */}
-            <div className="flip-card-front w-full h-full p-8 flex flex-col justify-center items-center text-center bg-gradient-to-r from-white-400 to-white-600 rounded-lg shadow-xl">
-              <h3 className="text-xl font-semibold text-black">🌍 Обслуживание Петербургского международного экономического форума (ПМЭФ)</h3>
+            <div className="flip-card-front w-full h-full p-8 flex flex-col justify-center items-center text-center bg-gradient-to-r from-gray-100 to-gray-100 rounded-lg shadow-xl">
+              <h3 className="text-2xl font-semibold text-black">Обслуживание ПМЭФ</h3>
+              {/* Иконка внутри карточки */}
+              <div className="flex justify-center mt-4">
+                <LiaGlobeSolid size={100} color="#FBBF24" />
+              </div>
             </div>
             {/* Оборотная сторона карточки */}
             <div className="flip-card-back w-full h-full p-8 bg-yellow-500 text-white rounded-lg flex items-center justify-center transform rotate-y-180">
-              <p className="text-xl text-center leading-relaxed">
+              <p className="text-xl text-center leading-relaxed shadow-xl bg-black bg-opacity-60 p-4 rounded-xl">
                 Мы активно работаем на этом знаковом мероприятии, обеспечивая транспортное сопровождение делегатов, участников и гостей.
               </p>
             </div>

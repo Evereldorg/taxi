@@ -34,3 +34,25 @@ export default {
     require('@tailwindcss/typography'),
   ],
 };
+
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 20px;
+  }
+  .service-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .service-card {
+    font-size: 0.9rem;
+  }
+  .fleet-card {
+    height: 300px;
+  }
+}

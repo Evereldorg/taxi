@@ -30,7 +30,7 @@
 /* Позиционирование модального окна поверх контента */
 .overlay-class {
   background: rgba(0, 0, 0, 0.1);
-  z-index: 9999; /* Обеспечиваем, что модальное окно поверх всего */
+  z-index: 999; /* Обеспечиваем, что модальное окно поверх всего */
 }
 
 /* Стили для модального окна */
@@ -64,6 +64,7 @@
   position: relative;
   max-width: 500px;
   width: 100%;
+  z-index: 990;
 }
 
 .close-btn {
@@ -154,7 +155,10 @@ body {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
 }
-
+html, body {
+  position: relative;
+  z-index: 0;
+}
 .section {
   min-height: 100vh;
   display: flex;

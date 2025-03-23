@@ -10,7 +10,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[9999]"
         >
           {/* Модальное окно */}
           <motion.div
@@ -18,7 +18,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="bg-white p-8 rounded-xl shadow-lg max-w-lg w-full z-50"
+            className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[9999]"
           >
             <h3 className="text-2xl font-bold mb-4">{title}</h3>
             <p className="text-gray-700">{children}</p>
