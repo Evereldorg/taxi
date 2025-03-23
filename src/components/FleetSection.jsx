@@ -9,13 +9,13 @@ const FleetSection = () => {
     <section id="fleet" className="bg-white py-16 px-4">
       {/* Текст над мини-блоками */}
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-semibold text-black mb-4">
+        <h2 className="text-4xl font-bold text-gray-900 mb-10">
           Центр подключения водителей – комфорт и качество в каждой поездке
         </h2>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+        <p className="text-lg text-gray-900 max-w-5xl mx-auto">
           Мы предлагаем профессиональные услуги такси во всех тарифах: Эконом, Комфорт, Комфорт+, Бизнес, Премьер, Элит, Минивэн. Независимо от выбранного класса, наши водители обеспечивают высокий уровень сервиса, а автомобили – чистоту и комфорт.
         </p>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto mt-6">
+        <p className="text-lg text-gray-900 max-w-5xl mx-auto mt-6">
           Но мы не просто таксопарк – мы создаем премиальный сервис перевозок, предлагая клиентам услуги, которые делают поездки удобными, статусными и незабываемыми.
         </p>
       </div>

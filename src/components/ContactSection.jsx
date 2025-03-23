@@ -8,10 +8,10 @@ const ContactSection = () => {
         <h2 className="text-4xl font-bold text-gray-900 mb-6">
           Связаться с нами
         </h2>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+        <p className="text-lg text-gray-900 max-w-5xl mx-auto mb-8">
           Центр подключения водителей работает полностью онлайн. Это позволяет нам:
         </p>
-        <ul className="text-lg text-gray-700 max-w-3xl mx-auto mb-8 text-left list-disc list-inside">
+        <ul className="text-lg text-gray-900 max-w-5xl mx-auto mb-8 text-left list-disc list-inside">
           <li>Экономить на аренде и направлять эти средства на улучшение сервиса для наших водителей.</li>
           <li>Работать быстрее и удобнее, без необходимости личного визита – все вопросы решаются дистанционно.</li>
           <li>Следовать мировым трендам, ведь онлайн-формат – это будущее, уже доказавшее свою эффективность.</li>

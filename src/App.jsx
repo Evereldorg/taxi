@@ -15,9 +15,9 @@ function App() {
     <div className="font-sans bg-gray-100">
       <Navbar />
       <HeroSection />
-      <NewSection />
-      <AboutSection />
       <FleetSection />
+      <AboutSection />
+      <NewSection />
       <ServicesSection />
       <ContactSection />
       <Footer />

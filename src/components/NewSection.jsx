@@ -1,65 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 
-const NewSection = () => {
-  const [news, setNews] = useState([]);
+export default function NewSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentNews, setCurrentNews] = useState(null);
 
-  useEffect(() => {
-    const fetchNews = async () => {
-      const vkNews = [{ id: 1, title: "Новость из ВКонтакте", content: "Текст новости", date: "2025-03-01" }];
-      const tgNews = [{ id: 2, title: "Новость из Telegram", content: "Текст новости", date: "2025-03-02" }];
-      setNews([...vkNews, ...tgNews]);
-    };
-    fetchNews();
-  }, []);
-
-  const openModal = (newsItem) => {
-    setCurrentNews(newsItem);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const news = [
+    { id: 1, title: 'Новость 1', text: 'Описание новости 1' },
+    { id: 2, title: 'Новость 2', text: 'Описание новости 2' },
+    { id: 3, title: 'Новость 3', text: 'Описание новости 3' },
+    { id: 4, title: 'Новость 4', text: 'Описание новости 4' },
+    { id: 5, title: 'Новость 5', text: 'Описание новости 5' },
+    { id: 6, title: 'Новость 6', text: 'Описание новости 6' },
+  ];
 
   return (
-    <section className="bg-white py-20" id="news">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold text-primary mb-10">Новости</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {news.map((newsItem) => (
-            <div
-              key={newsItem.id}
-              className="bg-gray-100 p-6 rounded-lg shadow-lg cursor-pointer"
-              onClick={() => openModal(newsItem)}
-            >
-              <h3 className="text-xl font-semibold">{newsItem.title}</h3>
-              <p>{newsItem.content.substring(0, 100)}...</p>
-            </div>
-          ))}
-        </div>
+    <section id="fleet" className="bg-white py-16 px-4">
+    <div className="relative p-8">
+      <div className="grid grid-cols-3 gap-4">
+        {news.map((item) => (
+          <div key={item.id} className="p-4 bg-gray-100 rounded-lg shadow-md cursor-pointer" onClick={() => setIsModalOpen(true)}>
+            <h3 className="text-lg font-bold">{item.title}</h3>
+            <p className="text-sm text-gray-600">{item.text}</p>
+          </div>
+        ))}
       </div>
-
-      {/* Фон с блюром, если модальное окно открыто */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 backdrop-blur-sm z-40"></div>
-      )}
-
-      {/* Модальное окно */}
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <div className="modal-content">
-          <h2 className="text-xl font-semibold mb-4">{currentNews?.title}</h2>
-          <p>{currentNews?.content}</p>
-          <span className="text-sm text-gray-500">{currentNews?.date}</span>
-          <button className="mt-4 bg-yellow-400 text-black py-2 px-4 rounded-lg" onClick={closeModal}>
-            Закрыть
-          </button>
+        <div className="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+          <div className="bg-white p-6 rounded-lg shadow-lg relative">
+            <button onClick={() => setIsModalOpen(false)} className="absolute top-2 right-2 text-gray-500">✖</button>
+            <h2 className="text-xl font-bold">Подробнее</h2>
+            <p>Здесь будет полный текст новости.</p>
+          </div>
         </div>
-      </Modal>
+      )}
+    </div>
     </section>
   );
-};
-
-export default NewSection;
+}

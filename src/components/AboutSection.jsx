@@ -1,60 +1,51 @@
 // src/components/AboutSection.jsx
 import React from 'react';
+import { FaMoneyBillWave, FaShieldAlt, FaClock, FaCarSide, FaUsers, FaMapMarkedAlt } from "react-icons/fa";
 
-const AboutSection = () => {
+const services = [
+  { id: 1, icon: <FaMoneyBillWave size={40} className="text-yellow-500" />, title: "Мгновенное подключение", description: "Начните зарабатывать уже сегодня." },
+  { id: 2, icon: <FaShieldAlt size={40} className="text-blue-500" />, title: "Честные и своевременные выплаты", description: "Без задержек и скрытых комиссий." },
+  { id: 3, icon: <FaClock size={40} className="text-green-500" />, title: "Круглосуточная поддержка", description: "Мы всегда рядом, чтобы помочь в любой ситуации." },
+  { id: 4, icon: <FaCarSide size={40} className="text-red-500" />, title: "Помощь с документами", description: "Консультируем по ИП, самозанятости, путевым листам и ОСГОП." },
+  { id: 5, icon: <FaUsers size={40} className="text-purple-500" />, title: "Подбор автомобилей (СПб)", description: "Подберем машину под нужный тариф." },
+  { id: 6, icon: <FaMapMarkedAlt size={40} className="text-teal-500" />, title: "Подбор водителей для арендодателей", description: "Найдем надежного водителя для вашего авто." },
+];
+
+export default function AboutSection() {
   return (
-    <section id="about" className="py-16 bg-gray-100">
-      <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6">
+    <section id="about" className="flex flex-col items-center justify-center py-12 bg-gray-100">
+        <h2 className="text-4xl font-bold text-gray-900 mb-10">
           О нас
         </h2>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+        <p className="text-lg text-gray-900 max-w-5xl mx-auto mb-8">
           <strong>Центр подключения водителей</strong> – таксопарк, созданный водителями для водителей.
         </p>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+        <p className="text-lg text-gray-900 max-w-5xl mx-auto mb-4">
           Мы знаем, каково это – работать в такси. С какими сложностями сталкиваются водители: задержки выплат, отсутствие поддержки, сложные условия работы. Именно поэтому в 2022 году мы решили создать свой таксопарк – такой, в котором водители чувствуют себя уверенно, работают на выгодных условиях и всегда могут рассчитывать на помощь.
         </p>
 
-        <h3 className="text-2xl font-semibold text-gray-900 mt-10 mb-4">
-          Почему выбирают нас?
+        <h3 className="text-3xl font-semibold text-gray-900 mt-6 mb-6">
+          Почему именно мы?
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
-          <div className="p-4 bg-gray-100 rounded-lg shadow-md">
-            <p className="text-lg font-semibold text-gray-900">🚀 Мгновенное подключение</p>
-            <p className="text-gray-700">Начните зарабатывать уже сегодня.</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl">
+        {services.map((service) => (
+          <div
+            key={service.id}
+            className="bg-white p-6 rounded-3xl shadow-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-2xl"
+          >
+            <div className="mb-4">{service.icon}</div>
+            <h3 className="text-xl font-semibold">{service.title}</h3>
+            <p className="text-gray-700 mt-2">{service.description}</p>
           </div>
-          <div className="p-4 bg-gray-100 rounded-lg shadow-md">
-            <p className="text-lg font-semibold text-gray-900">💰 Честные и своевременные выплаты</p>
-            <p className="text-gray-700">Без задержек и скрытых комиссий.</p>
-          </div>
-          <div className="p-4 bg-gray-100 rounded-lg shadow-md">
-            <p className="text-lg font-semibold text-gray-900">📞 Круглосуточная поддержка</p>
-            <p className="text-gray-700">Мы всегда рядом, чтобы помочь в любой ситуации.</p>
-          </div>
-          <div className="p-4 bg-gray-100 rounded-lg shadow-md">
-            <p className="text-lg font-semibold text-gray-900">📄 Помощь с документами</p>
-            <p className="text-gray-700">Консультируем по ИП, самозанятости, путевым листам и ОСГОП.</p>
-          </div>
-          <div className="p-4 bg-gray-100 rounded-lg shadow-md">
-            <p className="text-lg font-semibold text-gray-900">🚗 Подбор автомобилей (СПб)</p>
-            <p className="text-gray-700">Подберем машину под нужный тариф.</p>
-          </div>
-          <div className="p-4 bg-gray-100 rounded-lg shadow-md">
-            <p className="text-lg font-semibold text-gray-900">👨‍✈️ Подбор водителей для арендодателей</p>
-            <p className="text-gray-700">Найдем надежного водителя для вашего авто.</p>
-          </div>
-        </div>
-
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto mt-10">
+        ))}
+      </div>
+              <p className="text-lg text-gray-900 max-w-5xl mx-auto mt-10">
           Мы не просто подключаем – мы помогаем водителям строить стабильный и выгодный бизнес. Наша миссия – создать комфортные условия, где каждый водитель сможет зарабатывать достойные деньги и чувствовать себя защищенным.
         </p>
 
-        <p className="text-xl font-bold text-yellow-500 mt-6">
+        <p className="text-2xl font-bold text-yellow-400 mt-6">
           Присоединяйтесь к Центру подключения водителей прямо сейчас!
         </p>
-      </div>
     </section>
   );
-};
-
-export default AboutSection;
+}
